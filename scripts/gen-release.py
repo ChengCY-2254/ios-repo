@@ -1,15 +1,12 @@
 #!/usr/bin/env python3
-"""为 Cydia / Sileo 软件源生成 Release 文件。
+"""Generate the Release file for a Cydia/Sileo repository.
 
-用法:
-    python3 scripts/gen-release.py --root .
+Usage: python3 scripts/gen-release.py --root .
 
-Release 包含仓库基本信息（可通过命令行参数或同名环境变量覆盖，例如
-REPO_ORIGIN、REPO_LABEL、REPO_SUITE、REPO_VERSION、REPO_CODENAME、
-REPO_ARCHITECTURES、REPO_COMPONENTS、REPO_DESCRIPTION），
-并列出仓库根目录下实际存在的 Packages* 文件（Packages、Packages.gz、
-Packages.bz2、Packages.xz 等）的 MD5 / SHA1 / SHA256 / SHA512 校验和，
-供 Cydia / Sileo 校验元数据完整性。仅依赖 Python 3 标准库。
+Values can be overridden with CLI flags or environment variables
+(REPO_ORIGIN, REPO_LABEL, REPO_SUITE, REPO_VERSION, REPO_CODENAME,
+REPO_ARCHITECTURES, REPO_COMPONENTS, REPO_DESCRIPTION).
+All Packages* files present in the root are checksummed into the release.
 """
 
 import argparse
@@ -21,7 +18,6 @@ from email.utils import formatdate
 
 CHUNK_SIZE = 1 << 20
 
-# 会被写进 Release 校验和段的候选文件（只列实际存在的）
 CANDIDATES = [
     "Packages",
     "Packages.gz",
@@ -31,7 +27,6 @@ CANDIDATES = [
     "Packages.zst",
 ]
 
-# Release 中对每个文件列出的校验和段
 CHECKSUMS = [
     ("MD5Sum", "md5"),
     ("SHA1", "sha1"),
@@ -52,8 +47,8 @@ def digest_file(path: str, algo: str) -> str:
 
 
 def main() -> None:
-    parser = argparse.ArgumentParser(description="生成 Cydia / Sileo 源 Release 文件")
-    parser.add_argument("--root", default=".", help="仓库根目录（默认当前目录）")
+    parser = argparse.ArgumentParser(description="Generate Cydia/Sileo Release file")
+    parser.add_argument("--root", default=".")
     parser.add_argument("--origin", default=os.environ.get("REPO_ORIGIN", "My iOS Repo"))
     parser.add_argument("--label", default=os.environ.get("REPO_LABEL", "My iOS Repo"))
     parser.add_argument("--suite", default=os.environ.get("REPO_SUITE", "stable"))
@@ -75,7 +70,7 @@ def main() -> None:
     root = args.root
     present = [name for name in CANDIDATES if os.path.isfile(os.path.join(root, name))]
     if not present:
-        print("警告：未找到 Packages* 文件，Release 校验和段将为空", file=sys.stderr)
+        print("warning: no Packages* files found", file=sys.stderr)
 
     lines = [
         f"Origin: {args.origin}",
@@ -100,7 +95,7 @@ def main() -> None:
     release_path = os.path.join(root, "Release")
     with open(release_path, "w", encoding="utf-8") as fh:
         fh.write("\n".join(lines) + "\n")
-    print(f"已生成 {release_path}")
+    print(f"wrote {release_path}")
 
 
 if __name__ == "__main__":

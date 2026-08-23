@@ -1,3 +1,7 @@
+# Local metadata generation. Optional: CI does this automatically.
+# Requirements: dpkg-scanpackages (brew install dpkg), gzip, bzip2, python3.
+# xz is optional; Packages.xz is skipped when missing.
+
 PYTHON ?= python3
 SCAN   ?= dpkg-scanpackages
 ROOT   := .
@@ -8,10 +12,8 @@ all: Packages Packages.gz Packages.bz2 Packages.xz Release
 
 Packages: $(DEBS)
 	@if test -n "$(DEBS)"; then \
-		echo ">> dpkg-scanpackages debs"; \
 		$(SCAN) --multiversion debs /dev/null > Packages; \
 	else \
-		echo ">> 警告: debs/ 下没有 .deb 文件，生成空 Packages"; \
 		: > Packages; \
 	fi
 
@@ -24,8 +26,6 @@ Packages.bz2: Packages
 Packages.xz: Packages
 	@if command -v xz >/dev/null 2>&1; then \
 		xz -9c Packages > Packages.xz; \
-	else \
-		echo ">> xz 不可用，跳过 Packages.xz"; \
 	fi
 
 Release: Packages Packages.gz Packages.bz2 Packages.xz
