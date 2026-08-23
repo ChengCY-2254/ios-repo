@@ -14,3 +14,19 @@ Description: 自动开启低电量模式（仅ios18）高版本没试过，低�
 Author: cheng <autopower@hutao.run>
 Name: AutoPower
 
+Package: io.cheng.turnbook
+Version: 0.0.2
+Architecture: iphoneos-arm64
+Maintainer: cheng
+Installed-Size: 240
+Depends: mobilesubstrate (>= 0.9.5000)
+Filename: debs/io.cheng.turnbook_0.0.2_iphoneos-arm64.deb
+Size: 25078
+MD5sum: 2f17bbdf4014e4a9f1835a99ae5d5dbd
+SHA1: 4244005c9ff5a793a370c8d9c4ddcbed7b1c1d8c
+SHA256: d856e753c43b233d118e98568ea4fc1cfec98fc4be258e6bc23bfaf1619c3f5f
+Section: Tweaks
+Description: 给刺猬猫添加音量键翻页，支持ios18，其它ios版本不支持。刺猬猫测试版本为3.5.605，如果软件没有大变动的话，那么这个插件理论上是能一直支持的。\r\n播放音频可能会导致这个插件在音量调整上出现一些小问题，建议后台不要播放东西。
+Author: cheng
+Name: turnbook
+
