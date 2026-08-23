@@ -22,7 +22,12 @@ concurrency:
 jobs:
   build:
     runs-on: ubuntu-latest
-    environment: github-pages 
+    environment: github-pages
+    env:
+      # 显式从 GitHub Actions 变量存储（vars 上下文）读取，绕开环境注入层
+      REPO_ORIGIN: ${{ vars.REPO_ORIGIN }}
+      REPO_LABEL: ${{ vars.REPO_LABEL }}
+      REPO_DESCRIPTION: ${{ vars.REPO_DESCRIPTION }}
     steps:
       - name: 检出代码
         uses: actions/checkout@v4
@@ -49,11 +54,10 @@ jobs:
           bzip2 -9c Packages > Packages.bz2
           xz -9c Packages > Packages.xz
 
-      - name: ▶ 调试：查看注入的变量值（临时步骤，定位后可删除）
+      - name: ▶ 调试：env 注入 vs vars 上下文（临时，定位后可删）
         run: |
-          echo "REPO_ORIGIN=[$REPO_ORIGIN]"
-          echo "REPO_LABEL=[$REPO_LABEL]"
-          echo "REPO_DESCRIPTION=[$REPO_DESCRIPTION]"
+          echo "env注入: REPO_ORIGIN=[$REPO_ORIGIN]"
+          echo "vars上下文: REPO_ORIGIN=${{ vars.REPO_ORIGIN }}"
 
       - name: 生成 Release
         run: python3 scripts/gen-release.py --root .
