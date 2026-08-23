@@ -49,6 +49,12 @@ jobs:
           bzip2 -9c Packages > Packages.bz2
           xz -9c Packages > Packages.xz
 
+      - name: ▶ 调试：查看注入的变量值（临时步骤，定位后可删除）
+        run: |
+          echo "REPO_ORIGIN=[$REPO_ORIGIN]"
+          echo "REPO_LABEL=[$REPO_LABEL]"
+          echo "REPO_DESCRIPTION=[$REPO_DESCRIPTION]"
+
       - name: 生成 Release
         run: python3 scripts/gen-release.py --root .
 
