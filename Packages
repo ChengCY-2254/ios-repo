@@ -30,3 +30,19 @@ Description: 给刺猬猫添加音量键翻页，支持ios18，其它ios版本�
 Author: cheng
 Name: turnbook
 
+Package: io.cheng.turnbook
+Version: 0.0.3
+Architecture: iphoneos-arm64
+Maintainer: cheng
+Installed-Size: 240
+Depends: mobilesubstrate (>= 0.9.5000)
+Filename: debs/io.cheng.turnbook_0.0.3_iphoneos-arm64.deb
+Size: 25862
+MD5sum: d4d5cd5b39440fd2636cf56d9f25e126
+SHA1: e80369c909ad0d77bf4edceaa6ad975b66649c37
+SHA256: e773cd3131c125eb2da7be6c7fb5c777459052773a367079d46cf2591de3a4ca
+Section: Tweaks
+Description: 给刺猬猫添加音量键翻页，支持ios18，其它ios版本不支持。刺猬猫测试版本为3.5.605，如果软件没有大变动的话，那么这个插件理论上是能一直支持的。播放音频可能会导致这个插件在音量调整上出现一些小问题，建议后台不要播放东西。
+Author: cheng
+Name: turnbook
+
