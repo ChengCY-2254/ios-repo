@@ -1,0 +1,33 @@
+Origin: My iOS Repo
+Label: My iOS Repo
+Suite: stable
+Version: 1.0
+Codename: ios
+Architectures: iphoneos-arm iphoneos-arm64
+Components: main
+Description: A jailbreak package repository
+Date: Sun, 23 Aug 2026 04:22:47 GMT
+
+MD5Sum:
+ 0305bd4a455748f20d06ec7751791742 587 Packages
+ 5226721b9c8ecd99975ab0a05ab038a5 479 Packages.gz
+ 4c4cf9b64aa73ed7fe3fa8230474ed76 501 Packages.bz2
+ f206b768556a87b5f66c8a15b4bda5c6 496 Packages.xz
+
+SHA1:
+ 85aee277aff3414c86dafe724ff45be6c34c0014 587 Packages
+ 535dfc3e900bca89e7058f4e32d3c8c68426689d 479 Packages.gz
+ feda398730268569be5d42aeaf1ce406eb157e57 501 Packages.bz2
+ c12bd759c4a2d07bd6690a5134f074b656c1ee50 496 Packages.xz
+
+SHA256:
+ ac9aa087d6eca2fe74ee598fb948ac62683261b9aeab497689c5c3b3ab1fca45 587 Packages
+ ee1d835839c1bcabb00bb7e2108a03b3ea6fb854f7e619f1273f7a74b12c1a51 479 Packages.gz
+ 32120763db3aca665d63535d939a1e3ba2510aaaae122ba886fe058afe778012 501 Packages.bz2
+ a39806399ab90f6eced8a6eb3e930a8946dcfbe04c7f2fb034664925f83d1b90 496 Packages.xz
+
+SHA512:
+ 8d607e87076df638c2a498f25c912b9a6fed001768eb3c42b9e2d1e7ad9b0ef724bbb32664658027d61fa3279baf2503a6185026b7cf0478933d0e7dee9b7166 587 Packages
+ ca1eae198b47d5d7e9f3e7a9b49c5678458a2af5558350c6ab46353d8e85bc82c6177457877870855cd0862d1c9bf341a0092bf6f179280db8cefe87a92b2df0 479 Packages.gz
+ 7af5c51be37ad0532afa877caefc102cf74cdb5c8c111a40cf8d832be1d9fab01189c0568da533416b1381c88d93afb401174e1a31d0e0c7d460c57a57d1d206 501 Packages.bz2
+ 1f81e3dd8524bd8a8071c0b99882215e805ade9dc5b0cf79b6b52d8963395cc5c85b3bd66e3b251a8af511d33841fa5bbb66ee86a71febdde07da63ab2cf5130 496 Packages.xz
