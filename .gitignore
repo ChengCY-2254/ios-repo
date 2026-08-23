@@ -1,0 +1,3 @@
+# 本地杂项（注意：Packages* 与 Release 是需要提交的生成物，不要忽略）
+.DS_Store
+*.tmp
