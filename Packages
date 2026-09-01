@@ -94,19 +94,19 @@ Description: 给刺猬猫和番茄小说添加音量键翻页，支持ios18，�
 Author: cheng <cheng@hutao.run>
 Name: 音量键翻页
 
-Package: io.cheng.turnbook
+Package: io.cheng.turnbook.debug
 Version: 0.0.6-5+debug
 Architecture: iphoneos-arm64
 Maintainer: cheng
 Installed-Size: 464
 Depends: mobilesubstrate (>= 0.9.5000)
-Filename: debs/io.cheng.turnbook_0.0.6-5+debug_iphoneos-arm64.deb
-Size: 68680
-MD5sum: 54a7ecf0d23c2f1f1536698589d29844
-SHA1: 7b348bf398f452775fdf1eaa704e468525150f02
-SHA256: 40a4d79bea5dadad691e3fb654a4f8ab754742aa20120ff48e8976887f399d66
+Filename: debs/io.cheng.turnbook.debug_0.0.6-5+debug_iphoneos-arm64.deb
+Size: 68678
+MD5sum: 6ca98a7adc3be2c2b11e3358b650a7ef
+SHA1: b408e58b4e03fe78f96df1a4c226c1fa3418f182
+SHA256: a8bdda31138016afc0ceda74057f9c8ebb336877c0eea9350eb17308ffcfe7eb
 Section: Tweaks
 Description: 给刺猬猫和番茄小说添加音量键翻页，支持ios18，其它ios版本不支持。刺猬猫测试版本为3.5.605，番茄小说测试版本为7.3.3，如果软件没有大变动的话，那么这个插件理论上是能一直支持的。播放音频可能会导致这个插件在音量调整上出现一些小问题，建议后台不要播放东西。
 Author: cheng <cheng@hutao.run>
-Name: 音量键翻页
+Name: 音量键翻页(debug)
 
